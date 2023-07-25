@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        {% block title %}{% endblock %}
+    </title>
+</head>
+<body>
+<link rel="stylesheet" href="{% static 'style.css' %}">
+<link rel="stylesheet" href="{% static 'post.css' %}">
+
+
+<div class="navbar">
+    <a href="{% url 'post:list' %}">Домашняя страница</a>
+    <a href="{% url 'post:create' %}">Создать объявление</a>
+</div>
+
+{% block content %}{% endblock %}
+</body>
+</html>

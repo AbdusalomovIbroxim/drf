@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    {{ post.title }}
+{% endblock %}
+
+
+{% block content %}
+    <link rel="stylesheet" href="{% static 'detail.css' %}">
+
+    <div class="container">
+        <h1 class="post-title">{{ post.title }}</h1>
+        <p class="post-body">{{ post.body }}</p>
+        <p class="post-phone">{{ post.phone_number }}</p>
+        <!-- Вывод других полей объявления, если необходимо -->
+        {% if post.author == request.user %}
+            <a href="{% url 'post:delete' post.pk %}" style="background-color: red;" class="back-link">Del</a>
+            <a href="{% url 'post:update' post.pk %}" class="back-link">Update</a>
+        {% endif %}
+    </div>
+
+{% endblock %}

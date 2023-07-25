@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Home Page
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h2>Список объявлений</h2>
+        <ul class="post-list">
+            {% for post in posts %}
+                <li class="post-item">
+                    <div class="post-title">{{ post.title }}</div>
+                    <div class="post-details">
+                        {% if post.title|length > 30 %}
+                            <span>{{ post.description|slice:":30" }}</span>
+                        {% else %}
+                            <span>{{ post.description }}</span>
+                        {% endif %}
+                        <a href="{% url 'post:detail' post.pk %}" class="post-link">Подробнее</a>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+{% endblock %}
