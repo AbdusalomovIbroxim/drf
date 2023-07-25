@@ -18,7 +18,6 @@ drf-spectacular-sidecar==2023.7.1
 gunicorn==21.2.0
 idna==3.4
 inflection==0.5.1
-jsonschema-specifications==2023.7.1
 oauthlib==3.2.2
 packaging==23.1
 Pillow==10.0.0
