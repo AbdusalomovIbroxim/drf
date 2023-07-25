@@ -102,7 +102,7 @@ MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',  # request ni tekshiradi
 ]
 
-ROOT_URLCONF = 'root.urls'
+ROOT_URLCONF = 'drf.urls'
 
 # AUTH_USER_MODEL = 'users.CustomUser'
 
@@ -124,7 +124,7 @@ TEMPLATES = [
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
-WSGI_APPLICATION = 'root.wsgi.application'
+WSGI_APPLICATION = 'drf.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
