@@ -10,4 +10,4 @@ drf-spectacular==0.26.4
 drf-spectacular-sidecar==2023.7.1
 Pillow
 psycopg2-binary==2.9.6
-gunicorn
+gunicorn==21.0.1
