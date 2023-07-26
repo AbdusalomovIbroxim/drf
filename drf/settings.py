@@ -1,10 +1,12 @@
-from pathlib import Path
-import os, dj_database_url
+import dj_database_url
+import os
 from datetime import timedelta
+from pathlib import Path
+
 import django.core.mail
 import drf_spectacular.openapi
-import rest_framework.permissions
 import environ
+import rest_framework.permissions
 
 # import rest_framework_simplejwt.authentication
 
@@ -48,8 +50,8 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'rest_framework_simplejwt',
     'rest_framework_simplejwt.token_blacklist',
-    # 'drf_spectacular',
-    # 'drf_spectacular_sidecar',
+    'drf_spectacular',
+    'drf_spectacular_sidecar',
     'django_filters',
 ]
 
@@ -62,7 +64,7 @@ REST_FRAMEWORK = {
         # "rest_framework.authentication.TokenAuthentication",
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ],
-    # 'DEFAULT_SCHEMA_CLASS': ['drf_spectacular.openapi.AutoSchema', ],
+    'DEFAULT_SCHEMA_CLASS': ['drf_spectacular.openapi.AutoSchema', ],
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
 }
 
@@ -165,8 +167,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/'
-# STATICFILES_DIRS = [BASE_DIR / "static"]
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATICFILES_DIRS = [BASE_DIR / "static/"]
+# STATIC_ROOT = os.path.join(BASE_DIR, 'static/')
 
 MEDIA_URL = "media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
