@@ -11,3 +11,4 @@ drf-spectacular-sidecar==2023.7.1
 Pillow
 psycopg2-binary==2.9.6
 gunicorn==21.0.1
+django-cors-headers==4.2.0
