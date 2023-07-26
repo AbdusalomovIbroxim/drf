@@ -84,7 +84,7 @@
             // Show the remove buttons if there are more than min_num.
             toggleDeleteButtonVisibility(row.closest('.inline-group'));
 
-            // Pass the new form to the static-add callback, if provided.
+            // Pass the new form to the post-add callback, if provided.
             if (options.added) {
                 options.added(row);
             }
@@ -131,7 +131,7 @@
             }
             row.remove();
             nextIndex -= 1;
-            // Pass the deleted form to the static-delete callback, if provided.
+            // Pass the deleted form to the post-delete callback, if provided.
             if (options.removed) {
                 options.removed(row);
             }

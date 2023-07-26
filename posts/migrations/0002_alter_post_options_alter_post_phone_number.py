@@ -11,11 +11,11 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.AlterModelOptions(
-            name='static',
+            name='post',
             options={},
         ),
         migrations.AlterField(
-            model_name='static',
+            model_name='post',
             name='phone_number',
             field=models.CharField(max_length=20),
         ),

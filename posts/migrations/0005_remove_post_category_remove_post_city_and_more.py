@@ -11,19 +11,19 @@ class Migration(migrations.Migration):
 
     operations = [
         migrations.RemoveField(
-            model_name='static',
+            model_name='post',
             name='category',
         ),
         migrations.RemoveField(
-            model_name='static',
+            model_name='post',
             name='city',
         ),
         migrations.RemoveField(
-            model_name='static',
+            model_name='post',
             name='country',
         ),
         migrations.RemoveField(
-            model_name='static',
+            model_name='post',
             name='sub_category',
         ),
     ]

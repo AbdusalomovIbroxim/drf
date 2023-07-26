@@ -1433,7 +1433,7 @@ setDocument = Sizzle.setDocument = function( node ) {
 			}
 
 			// Support: Opera 10 - 11 only
-			// Opera 10-11 does not throw on static-comma invalid pseudos
+			// Opera 10-11 does not throw on post-comma invalid pseudos
 			el.querySelectorAll( "*,:x" );
 			rbuggyQSA.push( ",.*:" );
 		} );
@@ -3877,7 +3877,7 @@ jQuery.extend( {
 
 											// Support: Promises/A+ section 2.3.3.3.4.1
 											// https://promisesaplus.com/#point-61
-											// Ignore static-resolution exceptions
+											// Ignore post-resolution exceptions
 											if ( depth + 1 >= maxDepth ) {
 
 												// Only substitute handlers pass on context
@@ -9772,7 +9772,7 @@ jQuery.extend( {
 				transport.send( requestHeaders, done );
 			} catch ( e ) {
 
-				// Rethrow static-completion exceptions
+				// Rethrow post-completion exceptions
 				if ( completed ) {
 					throw e;
 				}
@@ -10518,8 +10518,8 @@ jQuery.offset = {
 			curElem = jQuery( elem ),
 			props = {};
 
-		// Set position first, in-case top/left are set even on static elem
-		if ( position === "static" ) {
+		// Set position first, in-case top/left are set even on post elem
+		if ( position === "post" ) {
 			elem.style.position = "relative";
 		}
 
@@ -10627,7 +10627,7 @@ jQuery.fn.extend( {
 			offsetParent = elem.offsetParent || doc.documentElement;
 			while ( offsetParent &&
 				( offsetParent === doc.body || offsetParent === doc.documentElement ) &&
-				jQuery.css( offsetParent, "position" ) === "static" ) {
+				jQuery.css( offsetParent, "position" ) === "post" ) {
 
 				offsetParent = offsetParent.parentNode;
 			}
@@ -10661,7 +10661,7 @@ jQuery.fn.extend( {
 		return this.map( function() {
 			var offsetParent = this.offsetParent;
 
-			while ( offsetParent && jQuery.css( offsetParent, "position" ) === "static" ) {
+			while ( offsetParent && jQuery.css( offsetParent, "position" ) === "post" ) {
 				offsetParent = offsetParent.offsetParent;
 			}
 
