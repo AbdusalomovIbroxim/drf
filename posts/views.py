@@ -13,7 +13,7 @@ class PostListView(generic.ListView):
 class PostDetailView(generic.DetailView):
     model = Post
     template_name = 'detail.html'
-    context_object_name = 'post'
+    context_object_name = 'static'
 
 
 class PostCreateView(LoginRequiredMixin, generic.CreateView):
@@ -32,7 +32,7 @@ class PostCreateView(LoginRequiredMixin, generic.CreateView):
 class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView):
     model = Post
     template_name = 'update.html'
-    context_object_name = "post"
+    context_object_name = "static"
     fields = ['title', 'body']
 
     def test_func(self):
@@ -50,7 +50,7 @@ class PostUpdateView(LoginRequiredMixin, UserPassesTestMixin, generic.UpdateView
 class PostDeleteView(LoginRequiredMixin, UserPassesTestMixin, generic.DeleteView):
     model = Post
     template_name = 'delete.html'
-    context_object_name = "post"
+    context_object_name = "static"
     success_url = '/'
 
     def test_func(self):

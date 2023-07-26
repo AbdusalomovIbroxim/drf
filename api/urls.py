@@ -15,5 +15,5 @@ urlpatterns = [
 ]
 
 router = SimpleRouter()
-router.register("", PostViewSet, basename='post')
+router.register("", PostViewSet, basename='static')
 urlpatterns += router.urls
